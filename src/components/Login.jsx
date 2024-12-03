@@ -17,7 +17,7 @@ const Login = () => {
   const handleLogin = async () => {
     try {
       const response = await axios.post(
-        `${process.env.REACT_APP_BACKEND_URL}/api/login`,
+        `https://entnt-backend-3.onrender.com/api/login`,
         formData
       );
       localStorage.setItem("token", response.data.token);

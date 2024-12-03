@@ -65,7 +65,7 @@ const UserDashboard = () => {
   
       // Send data to backend
       await axios.post(
-        `${process.env.REACT_APP_BACKEND_URL}/api/save-communication`,
+        `https://entnt-backend-3.onrender.com/api/save-communication`,
         { communications: payload }
       );
     } catch (error) {
@@ -82,7 +82,7 @@ const UserDashboard = () => {
           setUsername(storedName);
         } else {
           const response = await axios.get(
-            `${process.env.REACT_APP_BACKEND_URL}/api/user-info`
+            `https://entnt-backend-3.onrender.com/api/user-info`
           );
           setUsername(response.data.username); // Adjust based on your API response
         }
@@ -98,12 +98,12 @@ const UserDashboard = () => {
     const fetchData = async () => {
       try {
         const communicationsData = await axios.get(
-          `${process.env.REACT_APP_BACKEND_URL}/api/communications-user`
+          `https://entnt-backend-3.onrender.com/api/communications-user`
         );
         setCommunications(communicationsData.data);
 
         const notifications = await axios.get(
-          `${process.env.REACT_APP_BACKEND_URL}/api/notifications`
+          `https://entnt-backend-3.onrender.com/api/notifications`
         );
         setOver(notifications.data.filter((n) => n.type === "overdue"));
         setToday(notifications.data.filter((n) => n.type === "due today"));
