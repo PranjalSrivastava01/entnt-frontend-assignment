@@ -5,7 +5,7 @@ import { Button, Modal, Box, TextField } from "@mui/material";
 
 const CompanyManagement = () => {
   const [companies, setCompanies] = useState([]);
-  const [errors, setErrors] = useState([]);
+  // const [errors, setErrors] = useState([]);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [currentCompany, setCurrentCompany] = useState(null); // For editing
   const [formValues, setFormValues] = useState({
@@ -74,7 +74,7 @@ const CompanyManagement = () => {
         newErrors[key] = `${key} is required`;
       }
     });
-    setErrors(newErrors);
+    // setErrors(newErrors);
     return Object.keys(newErrors).length === 0; // Return true if no errors
   };
 
